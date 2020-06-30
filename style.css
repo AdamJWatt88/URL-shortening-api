@@ -1,10 +1,248 @@
+/* fix .toggle button. when hovered over it does not have the correct diensions */
+/* add styles for copy button when it switches to copied */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+/* temporary to show all icons on screen */
 img {
     height: 100px;
     width: 100px;
 }
 
 body {
-    padding: 100px;
-    
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins',sans-serif;
+    overflow-x: hidden;
+    color: #C0C0C0;
+    padding: 10px 30px;
+    margin: 0;
+}
+
+.btn,
+.toggle {
+    cursor: pointer;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    background-color: #20B2AA;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+}
+
+h1,
+h2,
+h3 {
+    color: black;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+/****************************************
+ header styles 
+ *****************************************/
+
+header {
+    position: relative;
+    background-image: url('images/illustration-working.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 400px;
+    width: 100%;
+}
+
+header h2 {
+    transform: translateY(-25px);
+    font-size: 2em;
+}
+
+.toggle {
+    outline: none;
+    border: none;
+    background-color: #fff;
+    color: #696969;
+    position: absolute;
+    right: 0;
+    transform: translateY(10px);
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+}
+
+/* hides nav element for mobile*/
+.hide {
+    display: none;
+}
+
+/********************************* 
+section top styles 
+**************************************/
+
+.top {
+    text-align: center;
+    line-height: 1;
+}
+
+.top-header {
+    font-weight: 1000;
+    font-size: 3em;
+    text-align: center;
+}
+
+/* hides image for mobile */
+.top-image {
+    display: none;
+}
+
+.top button {
+    margin-top: 20px;
+}
+
+
+/********************************* 
+url bar styles 
+*********************************/
+
+.url-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/bg-shorten-mobile.svg');
+    background-color: #663399;
+    background-position: 100% 0%;
+    background-repeat: no-repeat;
+    background-size: 75%;
+    border-radius: 20px;
+    height: 150px;
+    width: 100%;
+    padding: 0px 10px;
+    transform: translateY(50%);
+}
+
+.url-form input {
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+.url-form input,
+.url-form button {
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    height: 50px;
+    border-radius: 20px;
+    width: 80%;
+    margin: 5px;
+}
+
+
+/*************************************************** 
+user url styles
+****************************************************/
+
+.shortened-links-container {
+    margin-top: 100px;
+    height: max-content;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.shortened-links-container li {
+    border-radius: 10px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-link {
+    display: inline-block;
+    color: black;
+    border-bottom: 1px solid #eff1f7;
+    padding: 10px;
+    width: 100%;
+}
+
+.shortened-link {
+    padding: 10px;
+    color: #20B2AA;
+}
+
+.copy-btn {
+    border-radius: 10px;
+    width: 100%;
+}
+
+/*****************************************************
+ section middle styles 
+****************************************************/
+
+.middle {
+    text-align: center;
+    background-color: #eff1f7;
+    width: 100%;
+    padding: 0px 30px;
+}
+
+.middle h2 {
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+
+.card {
+    position: relative;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card-icon {
+    /* position: absolute; */
+    transform: translate(50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;   
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.card-icon img {
+    height: 50px;
+    width: 50px;
+}
+
+/*******************************************
+ footer styles 
+ ******************************************/
+.social-icon {
+    background-color: black;
+    /* color: white; */
+}
+
+
+@media (min-width: 501px) {
+ .top-image {
+     display: block;
+ } 
 }
