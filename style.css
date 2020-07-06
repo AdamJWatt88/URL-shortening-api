@@ -1,57 +1,55 @@
 /* fix .toggle button. when hovered over it does not have the correct diensions */
 /* add styles for copy button when it switches to copied */
+/* apply flex shrink or grow to sign up button in header */
+/* change top image back to background image to match design better and so that when trying to properly get all containers on page to evenly line up with <body> padding all the way down*/
 
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 /* temporary to show all icons on screen */
 img {
-    height: 100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
 
 body {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Poppins',sans-serif;
-    overflow-x: hidden;
-    color: #C0C0C0;
-    padding: 10px 30px;
-    margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  color: #c0c0c0;
 }
 
 h1,
 h2,
 h3 {
-    color: #000;
+  color: #000;
 }
 
 .btn,
 .toggle {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .btn {
-    outline: none;
-    border: none;
-    background-color: #20B2AA;
-    color: #fff;
-    border-radius: 50px;
-    padding: 10px 20px;
-    font-size: 1.5em;
+  outline: none;
+  border: none;
+  background-color: #20b2aa;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 1.5em;
 }
 
 ul,
 li {
-    list-style: none;
+  list-style: none;
 }
 
 .toggle {
-    display: none;
+  display: none;
 }
 
 /****************************************
@@ -59,138 +57,127 @@ li {
  *****************************************/
 
 header {
-    position: relative;
-    background-image: url('images/illustration-working.svg');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 400px;
-    width: 100%;
-    
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 0px;
 }
 
 header h2 {
-    transform: translateY(-25px);
-    font-size: 2em;
+  font-size: 2em;
 }
 
-nav {
- position: absolute;
- top: 0;
- width: 100%;
+nav ul li a {
+  color: #696969;
+  text-decoration: none;
 }
 
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+nav ul li a:hover {
+  color: #000;
 }
 
-
+nav ul .btn {
+  font-size: 1em;
+  padding: 5px;
+}
 
 /********************************* 
 section top styles 
 **************************************/
 
 .top {
-    text-align: center;
-    line-height: 1;
+  text-align: center;
+  line-height: 1;
+  height: 400px;
+  width: 100%;
 }
 
-.top-header {
-    color: black;
-    font-weight: 1000;
-    font-size: 3em;
-    text-align: center;
+.top h1 {
+  font-size: 2em;
 }
 
-/* hides image for mobile */
+.top .container {
+  width: 100%;
+}
+
 .top-image {
-    display: none;
+  height: 300px;
+  width: 400px;
 }
 
 .top button {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-
 
 /********************************* 
 url bar styles 
 *********************************/
 
 .url-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url('images/bg-shorten-mobile.svg');
-    background-color: #663399;
-    background-position: 100% 0%;
-    background-repeat: no-repeat;
-    background-size: 75%;
-    border-radius: 20px;
-    height: 150px;
-    width: 100%;
-    padding: 0px 10px;
-    transform: translateY(50%);
+  background-image: url("images/bg-shorten-mobile.svg");
+  background-color: #663399;
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  border-radius: 20px;
+  padding: 0px 10px;
+  transform: translateY(50%);
 }
 
 .url-form input {
-    padding-left: 10px;
-    font-size: 1em;
+  padding-left: 10px;
+  font-size: 1em;
 }
 
 .url-form input,
 .url-form button {
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    height: 50px;
-    border-radius: 20px;
-    width: 80%;
-    margin: 5px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  margin: 5px;
 }
-
 
 /*************************************************** 
 user url styles
 ****************************************************/
 
 .shortened-links-container {
-    margin-top: 100px;
-    height: max-content;
-    margin-bottom: 100px;
-    width: 100%;
+  margin-top: 100px;
+  height: max-content;
+  margin-bottom: 100px;
+  width: 100%;
 }
 
 .shortened-links-container li {
-    border-radius: 10px;
-    text-align: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #fff;
-    padding: 10px;
-    width: 100%;
-    margin-bottom: 20px;
+  border-radius: 10px;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .input-link {
-    display: inline-block;
-    color: black;
-    border-bottom: 1px solid #eff1f7;
-    padding: 10px;
-    width: 100%;
+  display: inline-block;
+  color: black;
+  border-bottom: 1px solid #eff1f7;
+  padding: 10px;
+  width: 100%;
 }
 
 .shortened-link {
-    padding: 10px;
-    color: #20B2AA;
+  padding: 10px;
+  color: #20b2aa;
 }
 
 .copy-btn {
-    border-radius: 10px;
-    width: 100%;
+  border-radius: 10px;
+  width: 100%;
 }
 
 /*****************************************************
@@ -198,77 +185,75 @@ user url styles
 ****************************************************/
 
 .middle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #eff1f7;
-    width: 100%;
-    padding: 0px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #eff1f7;
+  width: 100%;
+  padding: 0px 30px;
 }
 
 .middle h2 {
-    font-weight: bolder;
-    font-size: 2em;
+  font-weight: bolder;
+  font-size: 2em;
 }
 
-
 .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    border-radius: 10px;
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 300px;
-    height: 300px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .card-icon {
-    position: absolute;
-    top: 0;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #191970;   
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #191970;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
 }
 
 .card-icon img {
-    height: 50px;
-    width: 50px;
+  height: 50px;
+  width: 50px;
 }
-
 
 /*****************************************
  bottom section styles 
 *****************************************/
 
 .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url('images/bg-boost-mobile.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #663399;
-    height: 250px;
-    width: 100%;
-    padding: 0px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("images/bg-boost-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #663399;
+  height: 250px;
+  width: 100%;
+  padding: 0px 30px;
 }
 
 .bottom h2 {
-    color: #fff;
+  color: #fff;
 }
 
 /*******************************************
@@ -276,131 +261,233 @@ user url styles
  ******************************************/
 
 footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(37, 36, 36);
-    padding: 0px 30px;
-    width: 100%;
-    color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(37, 36, 36);
+  padding: 0px 30px;
+  width: 100%;
+  color: #fff;
 }
 
 footer a {
-    color: #696969;
-    text-decoration: none;
+  color: #696969;
+  text-decoration: none;
 }
 
 footer a:hover {
-    color: #fff;
+  color: #fff;
 }
 
 footer h2 {
-    margin-top: 50px;
-    margin-left: 50px;
-    font-size: 2.5em;
-    color: #fff;
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 2.5em;
+  color: #fff;
 }
 
 .footer-links h3 {
-    color: #fff;
-    margin-bottom: 10px;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 .footer-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .social-icons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-left: 50px;
-    margin-bottom: 50px;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  width: 100%;
 }
 
 .social-icon {
-    height: 30px;
-    width: 30px;
-    margin: 0px 10px;
-    background-color: rgb(37, 36, 36);
+  height: 30px;
+  width: 30px;
+  margin: 0px 10px;
+  background-color: rgb(37, 36, 36);
 }
-
 
 @media (max-width: 500px) {
 
- .top-image {
-     /* display: none; */
- } 
-
+  .top {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 100px;
+  }
 
   .toggle {
-      display: flex;
+    display: flex;
     outline: none;
     border: none;
     background-color: #fff;
     color: #696969;
     position: absolute;
     right: 0;
-    transform: translateY(10px);
+    transform: translate(-20px, 20px);
     font-size: 20px;
     height: 20px;
     width: 20px;
-}
+  }
 
-    /* hides nav element for mobile*/
- nav {
+  header h2 {
     position: absolute;
-    top: 80px;
+    left: 0;
+  }
+
+  /* shows nav element for mobile*/
+  nav.show {
+    transform: translateX(0%);
+  }
+
+  nav {
+    text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
     border-radius: 10px;
     background-color: #4b3f6b;
     height: 350px;
     width: 100%;
-    transition: transform .5s ease-in;
+    transition: transform 0.5s ease-in;
     transform: translateX(110%);
-}
+  }
 
-nav.show {
-    transform: translateX(0%);
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    width: 100%;
-}
-
-nav a:hover {
-    color: #696969;
-}
-
-nav li:nth-child(3){
-    border-bottom: 1px solid #696969;
-    padding-bottom: 10px;
-    width: 80%;
-}
-
-nav ul {
+  nav ul {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0;
-    width: 100%; 
+    height: 350px;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin-bottom: 20px;
+  }
+
+  nav ul li a {
+    color: #fff;
+    width: 100%;
+  }
+
+  nav ul li a:hover {
+    color: #696969;
+  }
+
+  nav ul li:nth-child(3) {
+    border-bottom: 1px solid #696969;
+    padding-bottom: 10px;
+    width: 90%;
+  }
+
+  .url-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+  }
+
+  .url-form input,
+  .url-form button {
+    height: 50px;
+    width: 80%;
+  }
+
 }
 
-nav ul li {
-    margin-bottom: 20px;
+
+
+
+@media (min-width: 501px) {
+
+  body,
+  .top,
+  .middle,
+  .bottom,
+  footer  {
+    padding: 0px 100px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-}
+  }
+
+  nav {
+    height: 100%;
+    width: 100%;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin-right: 20px;
+  }
+
+  nav ul li:first-child {
+    /* margin-left: 100px; */
+  }
+
+  nav ul li:nth-child(4) {
+    margin-left: auto;
+  }
+
+  ul .btn {
+    background-color: red;
+    flex-shrink: inherit;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .top .container {
+    width: 50%;
+    margin-right: 50px;
+  }
+
+  .url-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+  }
+
+  .url-form input {
+    flex-grow: 2;
+  }
+
+  .url-form input,
+  .url-form button {
+    height: 50px;
+  }
 
 }
