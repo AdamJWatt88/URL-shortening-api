@@ -152,25 +152,34 @@ user url styles
   width: 100%;
 }
 
-.shortened-links-container li {
-  border-radius: 10px;
+.result {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background-color: #fff;
-  padding: 10px;
+  justify-content: space-between;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  height: 50px;
 }
 
-.input-link {
-  color: black;
-  width: min-content;
+.result div a {
+  text-decoration: none;
 }
 
-.shortened-link {
-  width: min-content;
-  color: #20b2aa;
+.normal-url {
+  margin: 10px auto;
+  display: block;
+}
+
+.shortened-url {
+  display: block;
+  margin: 10px auto;
 }
 
 .copy-btn {
+  margin: 10px auto;
   border-radius: 10px;
 }
 
@@ -383,7 +392,7 @@ footer h2 {
     width: 80%;
   }
 
-  .shortened-links-container li {
+  .normal-url {
     border-radius: 10px;
     text-align: start;
     display: flex;
@@ -403,7 +412,7 @@ footer h2 {
     width: 100%;
   }
   
-  .shortened-link {
+  .shortened-url {
     padding: 10px;
     color: #20b2aa;
   }
@@ -528,7 +537,7 @@ footer h2 {
   
   }
   
-  .shortened-links-container li {
+  .normal-url {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -536,7 +545,7 @@ footer h2 {
     width: 100%;
   }
   
-  .shortened-links-container li:nth-child(2) {
+  .normal-url:nth-child(2) {
     margin-left: auto;
   } 
 
