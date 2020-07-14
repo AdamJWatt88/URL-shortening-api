@@ -28,7 +28,7 @@ function update(json) {
       <div class="shortened-url">
         <a href="https://rel.ink/${json.hashid}" target="_blank" id="url">https://rel.ink/${json.hashid}</a>
       </div>
-      <button class="copy btn">Copy</button>
+      <button class="copy-btn btn">Copy</button>
      </div>`;
   } else {
     return;
