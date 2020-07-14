@@ -74,21 +74,11 @@
     <form class="url-form">
       <input id="url-input" type="text" placeholder="Shorten a link here..." />
       <button id="shorten-btn" class="btn shorten-it">Shorten It!</button>
-      <small></small>
+      <small id="error-message" class="error-message"></small>
     </form>
 
     <section class="middle">
-      <!-- container to append links user types in -->
       <div id="shortened-links-container" class="shortened-links-container">
-        <div class="result">
-          <div class="normal-url">
-            <a href="https://github.com/josephden16/url-shortening-app" target="_blank">https://github.com/josephden16/url-shortening-app</a>
-          </div>
-          <div class="shortened-url">
-            <a href="https://rel.ink/${json.hashid}" target="_blank" id="url">https://rel.ink/${json.hashid}</a>
-          </div>
-          <button class="copy-btn btn">Copy</button>
-         </div>
       </div>
 
       <h2>Advanced Statistics</h2>

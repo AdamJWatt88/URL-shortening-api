@@ -7,6 +7,7 @@ const linksContainer = document.getElementById('shortened-links-container');
 const toggle = document.getElementById('toggle');
 const urlInput = document.getElementById('url-input');
 const shortenBtn = document.getElementById('shorten-btn');
+const errorMessage = document.getElementById('error-message')
 
 let hashArr = []
 
@@ -17,6 +18,16 @@ function readLink() {
   };
   return link;
 }
+
+const regex = new RegExp (/[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig)
+
+function checkUrl () {
+ 
+  regex.test(readLink) === false ? errorMessage.innerText = "" :  errorMessage.innerText = "Please enter a valid url"
+
+  
+}
+
 
 function update(json) {
   if (hashArr.indexOf(json.hashid) === -1) {
@@ -64,4 +75,6 @@ shortenBtn.addEventListener('click', (e) => {
   e.preventDefault();
   let data = readLink();
   getLink(data)
+  checkUrl()
 })
+
