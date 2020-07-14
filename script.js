@@ -11,6 +11,12 @@ const errorMessage = document.getElementById('error-message')
 
 let hashArr = []
 
+const regex = new RegExp(/[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig);
+const userInput = urlInput.value;
+const result = regex.test(`${userInput}`)
+
+
+
 
 function readLink() {
   let link = {
@@ -19,13 +25,21 @@ function readLink() {
   return link;
 }
 
-const regex = new RegExp (/[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig)
+
 
 function checkUrl () {
  
-  regex.test(readLink) === false ? errorMessage.innerText = "" :  errorMessage.innerText = "Please enter a valid url"
+  // regex.test(readLink) === true ? errorMessage.innerText = "" :  errorMessage.innerText = "Please enter a valid url"
 
-  
+  // if (result) {
+  //   errorMessage.innerText = "" 
+  // }
+  //   else {
+  //       errorMessage.innerText = "Please enter a valid url"
+  //   }
+      
+  result ? errorMessage.innerText = "" : errorMessage.innerText = "Please enter a valid url";
+  console.log(result)
 }
 
 
@@ -63,6 +77,7 @@ async function getLink(data) {
     hashArr.push(jsonData.hashid);
     console.log(jsonData)
   }
+  
 }
 
 
