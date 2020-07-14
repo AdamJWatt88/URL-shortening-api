@@ -5,43 +5,31 @@
 
 const linksContainer = document.getElementById('shortened-links-container');
 const toggle = document.getElementById('toggle');
-const urlInput = document.getElementById('url-input');
+const urlField = document.getElementById('url-input');
 const shortenBtn = document.getElementById('shorten-btn');
-const errorMessage = document.getElementById('error-message')
+const errorText = document.getElementById('error-message')
 
 let hashArr = []
 
-const regex = new RegExp(/[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/ig);
-const userInput = urlInput.value;
-const result = regex.test(`${userInput}`)
 
-
-
+const expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+let regex = new RegExp(expression);
 
 function readLink() {
   let link = {
-    url: urlInput.value
+    url: urlField.value
   };
   return link;
 }
 
 
-
-function checkUrl () {
- 
-  // regex.test(readLink) === true ? errorMessage.innerText = "" :  errorMessage.innerText = "Please enter a valid url"
-
-  // if (result) {
-  //   errorMessage.innerText = "" 
-  // }
-  //   else {
-  //       errorMessage.innerText = "Please enter a valid url"
-  //   }
-      
-  result ? errorMessage.innerText = "" : errorMessage.innerText = "Please enter a valid url";
-  console.log(result)
+function verifyLink(link) {
+  if (link.match(regex)) {
+    return true;
+  } else {
+    return false;
+  }
 }
-
 
 function update(json) {
   if (hashArr.indexOf(json.hashid) === -1) {
@@ -63,22 +51,28 @@ function update(json) {
 
 async function getLink(data) {
   const URL = `https://rel.ink/api/links/`;
-  const fetchResult = fetch(URL, {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  })
-  const response = await fetchResult
-  if (response.ok) {
-    const jsonData = await response.json();
-    update(jsonData);
-    hashArr.push(jsonData.hashid);
-    console.log(jsonData)
+  try {
+    const fetchResult = fetch(URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+    const response = await fetchResult;
+    if (response.ok) {
+      const jsonData = await response.json();
+      update(jsonData);
+      hashArr.push(jsonData.hashid);
+      console.log(jsonData);
+    } else {
+      alert('Failed to Fetch');
+    }
+  } catch (error) {
+    alert('Failed to Fetch, check your internet connection');
   }
-  
 }
+
 
 
 toggle.addEventListener('click', () => {
@@ -86,10 +80,26 @@ toggle.addEventListener('click', () => {
 })
 
 
-shortenBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  let data = readLink();
-  getLink(data)
-  checkUrl()
-})
+// shortenBtn.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   let data = readLink();
+//   getLink(data)
+// })
+
+
+
+shortenBtn.addEventListener('click', function (e) {
+  e.preventDefault()
+  if (urlField.value) {
+    errorText.innerText = '';
+    if (verifyLink(urlField.value)) {
+      let data = readLink();
+      getLink(data);
+    } else {
+      errorText.innerText = 'Please enter a valid url format e.g https://www.google.com';
+    }
+  } else {
+    errorText.innerText = 'Please add a link';
+  }
+});
 
