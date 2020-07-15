@@ -1,8 +1,3 @@
-// add "Please add a link" text to small tag in form when user inputs nothing or incorrect input
-// copy button in user's links needs to change to copied
-// make POST request in form of users URL
-// then make a GET request with the users shortened URL
-
 const linksContainer = document.getElementById('shortened-links-container');
 const toggle = document.getElementById('toggle');
 const urlField = document.getElementById('url-input');
@@ -34,7 +29,7 @@ function verifyLink(link) {
 function update(json) {
   if (hashArr.indexOf(json.hashid) === -1) {
     linksContainer.innerHTML +=
-    `<div class="result">
+      `<div class="result">
       <div class="normal-url">
         <a href="${json.url}" target="_blank">${json.url}</a>
       </div>
@@ -47,7 +42,6 @@ function update(json) {
     return;
   }
 }
-
 
 async function getLink(data) {
   const URL = `https://rel.ink/api/links/`;
@@ -73,20 +67,31 @@ async function getLink(data) {
   }
 }
 
+function copyText(newClip) {
+  navigator.clipboard.writeText(newClip).then(() => {
+    console.log('clip successful')
+  }, () => {
+    console.log('clip failed')
+  })
+}
 
+window.addEventListener('click', (e) => {
+  if (e.target.classList.contains('copy-btn')) {
+    let text = e.target.previousElementSibling.textContent;
+    copyText(text.trim())
+    e.target.innerText = "Copied!";
+    e.target.style = "background-color: #00FF00";
+    const clearText = () => {
+      e.target.innerText = "Copy";
+      e.target.style = "background-color: #20b2aa";
+    }
+    setTimeout(clearText, 1000)
+  }
+})
 
 toggle.addEventListener('click', () => {
   document.querySelector('header nav').classList.toggle('show')
 })
-
-
-// shortenBtn.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   let data = readLink();
-//   getLink(data)
-// })
-
-
 
 shortenBtn.addEventListener('click', function (e) {
   e.preventDefault()
@@ -102,4 +107,3 @@ shortenBtn.addEventListener('click', function (e) {
     errorText.innerText = 'Please add a link';
   }
 });
-

@@ -1,17 +1,4 @@
-/* fix .toggle button. when hovered over it does not have the correct diensions */
-/* add styles for copy button when it switches to copied */
-/* fix sign up button in header when it skrinks to smaller screen*/
-/* change top image back to background image to match design better and so that when trying to properly get all containers on page to evenly line up with <body> padding all the way down*/
-/* fix footer to adjust better on medium screens */
-/* fix user input links to be spaced correctly */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
-/* temporary to show all icons on screen */
-img {
-  height: 100px;
-  width: 100px;
-}
 
 body {
   position: relative;
@@ -401,7 +388,7 @@ footer h2 {
     height: max-content;
     width: 100%;
   }
-  
+
   .normal-url {
     border-bottom: 1px solid #696969;
     width: 100%;
@@ -451,14 +438,9 @@ footer h2 {
     margin-bottom: 50px;
     width: 100%;
   }
-
 }
 
-
-/* fix layout to work within these paramaters for footer */
-
-@media (min-width: 501px) and (max-width: 800px){
-
+@media (min-width: 501px) and (max-width: 800px) {
   .top {
     display: flex;
     align-items: center;
@@ -563,7 +545,7 @@ footer h2 {
     height: max-content;
     width: 100%;
   }
-  
+
   .normal-url {
     border-bottom: 1px solid #696969;
     width: 100%;
@@ -613,7 +595,6 @@ footer h2 {
     margin-bottom: 50px;
     width: 100%;
   }
-
 }
 
 @media (min-width: 801px) {
@@ -683,10 +664,6 @@ footer h2 {
     height: 50px;
   }
 
-  .shortened-links-container {
-  
-  }
-  
   .normal-url {
     display: flex;
     flex-direction: row;
@@ -694,10 +671,10 @@ footer h2 {
     justify-content: space-between;
     width: 100%;
   }
-  
+
   .normal-url:nth-child(2) {
     margin-left: auto;
-  } 
+  }
 
   .card-container {
     display: flex;
@@ -741,7 +718,6 @@ footer h2 {
     justify-content: space-between;
     height: 100%;
     width: 100%;
-
   }
 
   .footer-links {
@@ -759,6 +735,4 @@ footer h2 {
     height: 30px;
     margin-top: 40px;
   }
-
-
 }
